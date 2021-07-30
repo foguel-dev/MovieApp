@@ -16,6 +16,7 @@
         android:layout_margin="8dp">
 
     <ImageView
+        android:id="@+id/ivMovie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
