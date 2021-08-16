@@ -7,11 +7,19 @@ import com.example.movieapp.repository.WebService
 //Instancia a webservices
 class MovieDataSource(private val webservice: WebService) {
 
-    suspend fun getUpcomingMovies(): MovieList = webservice.getUpcomingMovies(AppConstants.API_KEY)
+    suspend fun getUpcomingMovies(): MovieList {
+        return webservice.getUpcomingMovies(AppConstants.API_KEY)
+    }
 
-    suspend fun getTopRateMovies(): MovieList = webservice.getTopRateMovies(AppConstants.API_KEY)
+    suspend fun getTopRatedMovies(): MovieList {
+        return webservice.getTopRateMovies(AppConstants.API_KEY)
+    }
 
-    suspend fun getPopularMovies(): MovieList = webservice.getPopularMovies(AppConstants.API_KEY)
+    suspend fun getPopularMovies(): MovieList {
+        return webservice.getPopularMovies(AppConstants.API_KEY)
+    }
 
-
+    suspend fun getNowPlaying(): MovieList {
+        return webservice.getNowPlaying(AppConstants.API_KEY)
+    }
 }

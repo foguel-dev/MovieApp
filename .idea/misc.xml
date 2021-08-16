@@ -4,10 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/gradiante.xml" value="0.2203125" />
-        <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.11" />
+        <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_details.xml" value="0.16" />
         <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_movies.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/movie_item.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/now_playing.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/popular_movies.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/top_rate_movies.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/HP PAVILION 15/AndroidStudioProjects/MovieApp/app/src/main/res/layout/upcomig_movies.xml" value="0.13243243243243244" />
