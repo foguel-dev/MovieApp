@@ -50,7 +50,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies), MovieAdapter.OnMovieC
                         addAdapter(2, PopularConcatAdapter(MovieAdapter(it.data.t3.results,this@MoviesFragment)))
                         addAdapter(2, NowPlayingConcantAdapter(MovieAdapter(it.data.t4.results,this@MoviesFragment)))
 
-
                     }
                     binding.myRecyclerView.adapter = concatAdapter
                 }

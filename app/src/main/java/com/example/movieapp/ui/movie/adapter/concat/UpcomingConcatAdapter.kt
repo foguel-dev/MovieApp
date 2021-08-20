@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.core.BaseConcatHolder
-import com.example.movieapp.databinding.PopularMoviesBinding
 import com.example.movieapp.databinding.UpcomigMoviesBinding
 import com.example.movieapp.ui.movie.adapter.MovieAdapter
 
-class UpcomingConcatAdapter(private val moviesAdapter: MovieAdapter): RecyclerView.Adapter<BaseConcatHolder<*>>(){
+class UpcomingConcatAdapter(private val     moviesAdapter: MovieAdapter): RecyclerView.Adapter<BaseConcatHolder<*>>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseConcatHolder<*> {
         val itemBinding = UpcomigMoviesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ConcatViewHolder(itemBinding)
