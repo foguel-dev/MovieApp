@@ -19,7 +19,7 @@ class RemoteDataSource(private val webservice: WebService) {
         return webservice.getPopularMovies(AppConstants.API_KEY)
     }
 
-    suspend fun getNowPlaying(): MovieList {
+    /*suspend fun getNowPlaying(): MovieList {
         return webservice.getNowPlaying(AppConstants.API_KEY)
-    }
+    }*/
 }

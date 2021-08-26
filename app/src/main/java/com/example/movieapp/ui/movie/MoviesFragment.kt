@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
 import com.example.movieapp.R
 import com.example.movieapp.core.Resource
+import com.example.movieapp.data.local.AppDataBase
+import com.example.movieapp.data.local.LocalMovieDataSource
 import com.example.movieapp.data.model.Movie
 import com.example.movieapp.data.remote.RemoteDataSource
 import com.example.movieapp.databinding.FragmentMoviesBinding
@@ -29,7 +31,16 @@ class MoviesFragment : Fragment(R.layout.fragment_movies), MovieAdapter.OnMovieC
 
     private lateinit var concatAdapter: ConcatAdapter
     private lateinit var binding: FragmentMoviesBinding
-    private val viewModel by viewModels<MovieViewModel> { MoviewModelFactory(MovieRepositoryImpl(RemoteDataSource(RetrofitClient.webservice))) }
+    //inyeccion de dependencia manual, al factory para generar una instancia del viewmodel
+    //manejar instancia de dependencias
+    private val viewModel by viewModels<MovieViewModel> {
+        MoviewModelFactory(
+            MovieRepositoryImpl(
+                RemoteDataSource(RetrofitClient.webservice),
+                LocalMovieDataSource(AppDataBase.getDatabase(requireContext()).movieDao())
+            )
+        )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,10 +56,10 @@ class MoviesFragment : Fragment(R.layout.fragment_movies), MovieAdapter.OnMovieC
                 is Resource.Success -> {
                     binding.progressBar.visibility = View.GONE
                     concatAdapter.apply {
-                        addAdapter(0, UpcomingConcatAdapter(MovieAdapter(it.data.t1.results,this@MoviesFragment)))
-                        addAdapter(1, TopRateConcatAdapter(MovieAdapter(it.data.t2.results,this@MoviesFragment)))
-                        addAdapter(2, PopularConcatAdapter(MovieAdapter(it.data.t3.results,this@MoviesFragment)))
-                        addAdapter(2, NowPlayingConcantAdapter(MovieAdapter(it.data.t4.results,this@MoviesFragment)))
+                        addAdapter(0, UpcomingConcatAdapter(MovieAdapter(it.data.first.results,this@MoviesFragment)))
+                        addAdapter(1, TopRateConcatAdapter(MovieAdapter(it.data.second.results,this@MoviesFragment)))
+                        addAdapter(2, PopularConcatAdapter(MovieAdapter(it.data.third.results,this@MoviesFragment)))
+                       // addAdapter(3, NowPlayingConcantAdapter(MovieAdapter(it.data.t4.results,this@MoviesFragment)))
 
                     }
                     binding.myRecyclerView.adapter = concatAdapter

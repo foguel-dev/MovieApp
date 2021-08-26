@@ -14,7 +14,7 @@ import com.example.movieapp.data.model.MovieEntity
 interface MovieDao {
 
     //Seleccionamos toda la lista de peliculas de nuestro modelo
-    @Query("SELECT * FROM movieentity")
+    @Query("SELECT * FROM movieEntity")
     suspend fun getAllMovies():List<MovieEntity>
 
     //Guardamos todas las peliculas y evitamos conflicto de duplicaciones

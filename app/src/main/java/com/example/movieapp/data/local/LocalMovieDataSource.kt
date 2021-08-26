@@ -15,18 +15,19 @@ class LocalMovieDataSource (private val movieDao: MovieDao){
     }
     //Accede a todas las peliculas pero filtra top rated
     suspend fun getTopRatedMovies(): MovieList {
-        return movieDao.getAllMovies().filter { it.movie_type == "toprated" }.toMovieList()
+        return movieDao.getAllMovies().filter { it.movie_type == "top_rated" }.toMovieList()
     }
     //Accede a todas las peliculas pero filtra popular
     suspend fun getPopularMovies(): MovieList {
         return movieDao.getAllMovies().filter { it.movie_type == "popular" }.toMovieList()
     }
     //Accede a todas las peliculas pero filtra nowplaying
-    suspend fun getNowPlaying(): MovieList {
+    /*suspend fun getNowPlaying(): MovieList {
         return movieDao.getAllMovies().filter { it.movie_type == "nowplaying" }.toMovieList()
-    }
+    }*/
 //Guarda pelucula
     suspend fun saveMovie(movie:MovieEntity){
-        saveMovie(movie)
+        movieDao.saveMovie(movie)
     }
+
 }

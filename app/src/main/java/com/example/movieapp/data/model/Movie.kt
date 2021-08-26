@@ -29,6 +29,7 @@ data class Movie(
 data class MovieList(val results: List<Movie> = listOf())
 
 // Room
+
 @Entity (tableName = "movieEntity")
 data class MovieEntity(
     @ColumnInfo(name = "adult")
@@ -60,9 +61,7 @@ data class MovieEntity(
     @ColumnInfo(name = "movie_type")
     var movie_type: String = ""
 )
-//extension function
-//transforma una lista a otra
-//movie entity a movie
+
 fun List<MovieEntity>.toMovieList(): MovieList {
     val resultList = mutableListOf<Movie>()
     this.forEach { movieEntity ->
@@ -70,8 +69,6 @@ fun List<MovieEntity>.toMovieList(): MovieList {
     }
     return MovieList(resultList)
 }
-
-//mapeo de datos
 
 fun MovieEntity.toMovie(): Movie = Movie(
     this.adult,

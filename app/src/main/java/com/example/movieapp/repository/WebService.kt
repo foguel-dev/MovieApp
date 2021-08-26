@@ -19,8 +19,8 @@ interface WebService {
     @GET("movie/popular")
     suspend fun getPopularMovies(@Query("api_key") apiKey: String): MovieList
 
-    @GET("movie/now_playing")
-    suspend fun getNowPlaying(@Query("api_key") apiKey: String): MovieList
+   // @GET("movie/now_playing")
+    //suspend fun getNowPlaying(@Query("api_key") apiKey: String): MovieList
 }
 
 object RetrofitClient{
