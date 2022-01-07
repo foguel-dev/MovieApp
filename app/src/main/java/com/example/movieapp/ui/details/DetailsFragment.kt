@@ -9,7 +9,7 @@ import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentDetailsBinding
 
 
-class DetailsFragment : Fragment(R.layout.fragment_details) {
+class DetailsFragment: Fragment(R.layout.fragment_details) {
     //Referencia a las vistas del layouts
     private val args by navArgs<DetailsFragmentArgs>()
     private lateinit var binding: FragmentDetailsBinding
